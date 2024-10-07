@@ -48,7 +48,7 @@ resource "azurerm_cosmosdb_sql_container" "sql_container" {
 
 #Create the Blob storage
 resource "azurerm_storage_account" "storage" {
-  name                     = "storage-account-${random_string.random.result}"
+  name                     = "storageaccount${random_string.random.result}"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
@@ -75,7 +75,7 @@ resource "azurerm_linux_web_app" "app" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_service_plan.plan.location
   service_plan_id     = azurerm_service_plan.plan.id
-  zip_deploy_file = "C:/Users/sarah/OneDrive/Documents/études/M2/Cloud computing/TP/Provisionnement d'une base de donnée NoSql et d'un blob de stockage/API Python/test/appTP2.zip"
+  zip_deploy_file = "C:/Users/sarah/OneDrive/Documents/études/M2/Cloud computing/TP/Provisionnement d'une base de donnée NoSql et d'un blob de stockage/CloudComputingTp2/API Python/test/appTP2.zip"
 
   site_config {
   }
